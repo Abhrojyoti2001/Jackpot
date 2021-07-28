@@ -63,7 +63,7 @@ class Game:
         self.start_btn = Button(self.root, text="Start Game", bg="#fff", fg="#FF5357", font=("Times", 20, "bold"), command=lambda: self.difficulty_set(self.dif)).pack(pady=(10, 10))
 
     def difficulty_set(self, get):
-        if get == None:
+        if get is None:
             self.jackpot = random.randint(1, 100)
             self.range = 100
         self.load_new_gui(self.gaming_window)
@@ -118,7 +118,7 @@ class Game:
                 result = "Jackpot number is higher than " + str(guess)
                 self.L.insert(0, result)
                 data = messagebox.askyesno("Wrong Guess", "Your guess is lower than jackpot  number, guess high. Are you want to continue?")
-                if data == True:
+                if data is True:
                     self.load_new_gui(self.gaming_window)
                 else:
                     ms2 = "The jackpot number is " + str(self.jackpot)
